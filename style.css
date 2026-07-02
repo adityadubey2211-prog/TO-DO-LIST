@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #212020;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0a0a0a;
+}
+.search {
+  input {
+    margin: 30px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px;
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #06b6d4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #22d3ee;
+    transform: translateY(-3px);
+  }
+  input:hover {
+    background-color: #2a2929;
+  }
+}
+.minor-components {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  p{
+    
+    color: #fff;
+    font-size: 30px;
+    margin-left: 30px;
+    font-weight: 600;
+  }
+}
+#All, #Active, #Completed , #sortSelect{
+   width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #06b6d4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;  
+}
+ #All:hover, #Active:hover, #Completed:hover, #sortSelect:hover {
+    background: #22d3ee;
+    transform: translateY(-3px);
+}
+.hero{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9{
+    font-size: 40px;
+    padding: 20px;
+    background-color: #212020;
+    width: 30%;
+    height: 300px;
+    border-radius: 20px;
+}
+.card9{
+    padding: 20px;
+    outline: 2px dashed #c9c9c9;
+    .icon{
+        align-items: center;
+        text-align: center;
+        font-size: 100px;
+        color: #5f6465;
+    }
+    .work{
+        align-items: center;
+        text-align: center;
+        font-size: 50px;
+        color: #5f6465;
+    }
+}
