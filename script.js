@@ -103,16 +103,20 @@ function createTask(task){
         const work = deleteBtn.addEventListener('click', (event) => {
             if(event.target.tagName === 'BUTTON' && event.target.innerText === 'Delete'){
                 const taskToDelete = newTask;
-                taskToDelete.remove();
-                updateProgress();
-                saveTask();
+                taskToDelete.classList.add("fade-out");
+                newTask.style.transition = "opacity .5s";
+                newTask.style.opacity = "0";
+                setTimeout(() => {
+                    taskToDelete.remove();
+                    updateProgress();
+                    saveTask();
+                    const allTasks = document.querySelectorAll('.task-card')
+                    if(allTasks.length === 0){
+                        searchTask.style.display='none';
+                    }
+                        sortTasks();
+                }, 500);
             }
-            sortTasks();
-            const allTasks = document.querySelectorAll('.task-card');
-            console.log(allTasks.length);
-             if(allTasks.length === 0){
-                 searchTask.style.display = "none";
-             }
         });
         const complete = checkbox.addEventListener('change', (event) => {
             if(event.target.checked){
@@ -122,6 +126,7 @@ function createTask(task){
                 saveTask()
             }
             else{
+                taskP.style.fontWeight = "600";
                 taskP.style.textDecoration = 'none';
                 updateProgress();
                 saveTask();

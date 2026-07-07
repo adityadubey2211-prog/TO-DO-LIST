@@ -125,7 +125,11 @@ header h1{
   flex-direction: column;
   gap: 22px;
   color: white;
-  transition: 0.35s ease;
+  transition: opacity .4s ease,
+              height .4s ease,
+              padding .4s ease,
+              margin .4s ease,
+              transform .35s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 .task-card::before {
@@ -167,6 +171,7 @@ header h1{
   transform: scale(1.01);
   box-shadow: 0 8px 20px rgba(6, 182, 212, 0.45);
 }
+
 #prioritySelect {
   width: 170px;
   height: 50px;
@@ -287,6 +292,7 @@ header h1{
 #progressText{
   color: #fff;
 }
+
 /* ---------------- LIGHT THEME ---------------- */
 
 body{
@@ -468,4 +474,151 @@ button{
 .light-theme #progressText{
     color:#111827;
     font-weight:600;
+}
+/* ===========================
+   TABLET (1024px)
+=========================== */
+@media (max-width: 1024px) {
+
+  .task-card{
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  .search{
+    flex-wrap: wrap;
+  }
+
+  .search input{
+    width: 100%;
+  }
+
+  #prioritySelect,
+  #addTaskBtn{
+    flex: 1;
+  }
+
+  .minor-components{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filters{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* ===========================
+   MOBILE (768px)
+=========================== */
+@media (max-width:768px){
+
+  header{
+    padding:15px;
+  }
+
+  header h1{
+    font-size:28px;
+  }
+
+  #themeBtn{
+    font-size:30px;
+  }
+
+  .search{
+    margin:15px;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .search input,
+  #prioritySelect,
+  #addTaskBtn{
+    width:100%;
+  }
+
+  .minor-components{
+    margin:15px;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .filters{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  #All,
+  #Active,
+  #Completed{
+    width:100%;
+  }
+
+  .sort-box{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  #sortSelect{
+    width:150px;
+  }
+
+  .hero{
+    margin:15px;
+  }
+
+  .task-card{
+    flex:0 0 100%;
+    min-height:auto;
+  }
+
+  .task-card p{
+    font-size:22px;
+  }
+
+  .task-with-checkbox p{
+    font-size:20px;
+  }
+
+  .task-card button{
+    font-size:18px;
+  }
+
+  #progressText{
+    text-align:center;
+    margin-top:10px;
+  }
+}
+/* ===========================
+   SMALL MOBILE (480px)
+=========================== */
+@media (max-width:480px){
+
+  header h1{
+    font-size:22px;
+  }
+
+  #themeBtn{
+    font-size:24px;
+  }
+
+  .task-card{
+    padding:18px;
+  }
+
+  .task-card p,
+  .task-with-checkbox p{
+    font-size:18px;
+  }
+
+  .task-card button{
+    width:100%;
+    font-size:16px;
+  }
+
+  .task-with-checkbox input[type="checkbox"]{
+    width:22px;
+    height:22px;
+  }
 }
