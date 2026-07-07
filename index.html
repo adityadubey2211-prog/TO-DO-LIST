@@ -9,29 +9,44 @@
 <body>
     <header>
         <h1>📝 My Tasks</h1>
+        <button id="themeBtn">🌙</button>
     </header>
     <div class="main">
         <div class="search">
             <input type="text" class="form-control" placeholder="Add a new task" id="taskInput">
             <select id="prioritySelect">
-                <option value="medium" selected>🟡 Medium</option>
-                <option value="high">🔴 High</option>
-                <option value="low">🟢 Low</option>
+                <option value="medium" selected data-priority="medium">🟡 Medium</option>
+                <option value="high" data-priority="high">🔴 High</option>
+                <option value="low" data-priority="low">🟢 Low</option>
             </select>
             <button id="addTaskBtn">Add Task</button>
         </div>
+
+
         <div class="minor-components">
-            <button id="All">All</button>
-            <button id="Active">Active</button>
-            <button id="Completed">Completed</button>
-            <div class="sort">
-            <p>Sort by:</p>
-            <select id="sortSelect">
-                <option value="date">Date</option>
-                <option value="priority">Priority</option>
-            </select>
+
+           <div class="filters">
+               <button id="All">All</button>
+               <button id="Active">Active</button>
+               <button id="Completed">Completed</button>
+           </div>
+
+           <div class="sort-box">
+               <p>Sort by:</p>
+               <select id="sortSelect">
+                   <option value="default" selected>Default</option>
+                   <option value="priority">Priority</option>
+               </select>
+           </div>
+
         </div>
         </div>
+        <div class="progress-container">
+           <div class="progress-bar"></div>
+        </div>
+
+        <p id="progressText">0 / 0 Completed</p>
+
         <div class="hero"></div>
     </div>
     <script src="script.js"></script>

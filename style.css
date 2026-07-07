@@ -7,15 +7,32 @@ body {
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top, #1d2538, #0a0a0a 55%);
   min-height: 100vh;
-} /* Header */
+}
+/* Header */
 header {
   background: rgba(33, 32, 32, 0.75);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
-  z-index: 999;
-} /* Search */
+  /* z-index: 999; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+
+}
+header h1{
+  color :#6cbac6
+}
+#themeBtn {
+  background: none;
+  border: none;
+  font-size: 44px;
+  cursor: pointer;
+  color: white;
+} 
+/* Search */
 .search {
   display: flex;
   align-items: center;
@@ -52,37 +69,43 @@ header {
   background: #22d3ee;
   transform: translateY(-3px);
 } /* Filters */
-.minor-components {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
+.minor-components{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:30px;
+    padding:15px 20px;
+    background:#171717;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
 }
-.minor-components p {
-  color: white;
-  font-size: 25px;
-  font-weight: 600;
+.filters{
+    display:flex;
+    gap:15px;
+}
+.sort-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.sort-box p{
+    font-size:18px;
+    color:white;
+    font-weight:600;
 }
 #All,
 #Active,
-#Completed,
-#sortSelect {
-  width: 150px;
-  height: 50px;
-  border: none;
-  border-radius: 12px;
-  background: #06b6d4;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+#Completed{
+    width:120px;
+    height:45px;
+    border-radius:999px;
+    background-color: rgb(71, 169, 189);
 }
 #All:hover,
 #Active:hover,
-#Completed:hover,
-#sortSelect:hover {
-  background: #22d3ee;
-  transform: translateY(-3px);
+#Completed:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(6,182,212,.35);
 }
 .hero {
   margin: 35px;
@@ -233,4 +256,216 @@ header {
 .minisearch:focus {
   border-color: #8b5cf6;
   box-shadow: 0 0 12px rgba(139, 92, 246, 0.35);
+}
+.progress-container {
+  width: 100%;
+  height: 16px;
+  background-color: #1a1a2e; /* Dark track background */
+  border-radius: 10px;
+  padding: 3px;
+  box-sizing: border-box;
+  border: 1px solid #00f3ff; /* Neon cyan border outline */
+  
+  /* Outer and inner track faint glow */
+  box-shadow: 
+    0 0 10px rgba(0, 243, 255, 0.2),
+    inset 0 0 5px rgba(0, 243, 255, 0.2); 
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #fff; 
+  border-radius: 8px;
+  transition: width 0.4s ease-in-out; 
+  box-shadow:
+    0 0 8px #fff,          
+    0 0 15px #00f3ff,        
+    0 0 20px #00f3ff,           
+    0 0 35px #00f3ff; 
+  transition: width 0.3s ease;
+}
+#progressText{
+  color: #fff;
+}
+/* ---------------- LIGHT THEME ---------------- */
+
+body{
+    transition: .35s ease;
+}
+
+body,
+header,
+.task-card,
+.search input,
+#prioritySelect,
+#sortSelect,
+#themeBtn,
+button{
+    transition: all .35s ease;
+}
+
+.light-theme{
+    background:#f4f7fb;
+    color:#111827;
+}
+
+/* Header */
+
+.light-theme header{
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    
+}
+
+.light-theme header h1{
+    color:#0b0f18;
+}
+
+/* Search */
+
+.light-theme .search input{
+    background:#ffffff;
+    color:#111827;
+    border:2px solid #dbe4ee;
+}
+
+.light-theme .search input::placeholder{
+    color:#6b7280;
+}
+
+.light-theme .search input:focus{
+    border-color:#06b6d4;
+    box-shadow:0 0 15px rgba(6,182,212,.2);
+}
+
+/* Select */
+
+.light-theme #prioritySelect,
+.light-theme #sortSelect{
+    background:#fff;
+    color:#111827;
+    border:2px solid #dbe4ee;
+}
+
+.light-theme #prioritySelect option,
+.light-theme #sortSelect option{
+    background:#fff;
+    color:#111827;
+}
+
+/* Task Card */
+
+.light-theme .task-card{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid rgba(0,0,0,.08);
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+}
+
+.light-theme .task-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(6,182,212,.18);
+    border-color:#06b6d4;
+}
+
+.light-theme .task-card p{
+    color:#111827;
+}
+
+/* Checkbox */
+
+.light-theme .task-with-checkbox input[type="checkbox"]{
+    background:#fff;
+    border:2px solid #06b6d4;
+    color:#111827;
+}
+.light-theme .task-with-checkbox input[type="checkbox"]:checked{
+    background:#06b6d4;
+    border-color:#06b6d4;
+}
+
+.light-theme .task-with-checkbox input[type="checkbox"]:checked::after{
+    content:"✓";
+    position:absolute;
+    left:6px;
+    top:1px;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+/* Buttons */
+
+.light-theme button,
+.light-theme #All,
+.light-theme #Active,
+.light-theme #Completed{
+    background:linear-gradient(135deg,#06b6d4,#0ea5e9);
+    color:white;
+}
+
+.light-theme button:hover,
+.light-theme #All:hover,
+.light-theme #Active:hover,
+.light-theme #Completed:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(6,182,212,.25);
+}
+
+/* Search Box */
+
+.light-theme .minisearch{
+    background:#fff;
+    color:#111827;
+    border:2px solid #dbe4ee;
+}
+
+.light-theme  .minisearch::placeholder{
+    color:#6b7280;
+}
+
+/* Minor Components */
+
+.light-theme .minor-components p{
+    color:#111827;
+}
+/* Progress Container */
+
+.light-theme .progress-container{
+    background:#ffffff;
+    border:1px solid #dbe4ee;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* Progress Track */
+
+.light-theme .progress-track{
+    background:#e5e7eb;
+}
+
+/* Progress Bar */
+
+.light-theme .progress-bar{
+    background:linear-gradient(
+        90deg,
+        #22d3ee 0%,
+        #06b6d4 40%,
+        #3b82f6 70%,
+        #8b5cf6 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(34,211,238,.55),
+        0 0 16px rgba(6,182,212,.45),
+        0 0 28px rgba(59,130,246,.35);
+
+    border-radius:8px;
+}
+
+/* Progress Text */
+
+.light-theme #progressText{
+    color:#111827;
+    font-weight:600;
 }
